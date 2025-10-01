@@ -43,27 +43,27 @@
 
         default_layer {
             bindings = <
-&none       &none           &none              &none                  &none                &none                    &none  &none                 &none                     &none               &none           &none
-&none       &none           &none              &none                  &none                &none                    &none  &none                 &none                     &none               &none           &none
-&kp TAB     &kp Q           &kp W              &kp F                  &kp P                &kp B                    &kp J  &kp L                 &kp U                     &kp Y               &kp SEMICOLON   &kp BSLH
-&caps_word  &hrm_l LCTRL A  &hrm_l LEFT_ALT R  &hrm_l LEFT_COMMAND S  &hrm_l LEFT_SHIFT T  &kp G                    &kp M  &hrm_r RIGHT_SHIFT N  &hrm_r RIGHT_COMMAND E    &hrm_l RIGHT_ALT I  &hrm_r RCTRL O  &kp COLON
-&kp LSHFT   &kp Z           &kp X              &kp C                  &kp D                &kp V                    &kp K  &kp H                 &kp COMMA                 &kp DOT             &kp FSLH        &kp RSHFT
-&mo 4       &kp HOME        &kp LGUI           &kp LEFT               &kp RIGHT                                            &kp DOWN              &kp UP_ARROW              &none               &none           &none
-                                                                      &key_repeat          &kp LEFT_SHIFT  &none    &none  &kp RC(SPACE)         &mt RC(RS(RA(RGUI))) TAB
-                                                                      &lt 2 BACKSPACE      &kp ESCAPE      &mo 3    &none  &kp ENTER             &lt 1 SPACE
+&none       &none           &none              &none                  &none                &none                  &none  &none                 &none                       &none               &none           &none
+&none       &none           &none              &none                  &none                &none                  &none  &none                 &none                       &none               &none           &none
+&kp TAB     &kp Q           &kp W              &kp F                  &kp P                &kp B                  &kp J  &kp L                 &kp U                       &kp Y               &kp SEMICOLON   &kp ENTER
+&caps_word  &hrm_l LCTRL A  &hrm_l LEFT_ALT R  &hrm_l LEFT_COMMAND S  &hrm_l LEFT_SHIFT T  &kp G                  &kp M  &hrm_r RIGHT_SHIFT N  &hrm_r RIGHT_COMMAND E      &hrm_l RIGHT_ALT I  &hrm_r RCTRL O  &kp COLON
+&kp LSHFT   &kp Z           &kp X              &kp C                  &kp D                &kp V                  &kp K  &kp H                 &kp COMMA                   &kp DOT             &kp FSLH        &kp RSHFT
+&mo 4       &kp HOME        &kp LGUI           &kp LEFT               &kp RIGHT                                          &kp DOWN              &kp UP_ARROW                &none               &none           &none
+                                                                      &kp BACKSPACE        &kp NUMBER_5  &none    &none  &kp ENTER             &mt RC(RS(RA(RGUI))) SPACE
+                                                                      &lt 2 ESCAPE         &mo 1         &mo 3    &none  &kp RC(SPACE)         &mo 1
             >;
         };
 
         symbol_layer {
             bindings = <
-&trans      &trans           &trans          &trans           &trans            &trans                       &trans             &trans          &trans                &trans                 &trans            &trans
-&trans      &trans           &trans          &trans           &trans            &trans                       &trans             &trans          &trans                &trans                 &trans            &trans
-&kp PERIOD  &kp EXCLAMATION  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp SEMICOLON     &kp QUESTION                 &kp GRAVE          &kp LEFT_SHIFT  &kp RIGHT_COMMAND     &kp RIGHT_ALT          &kp LEFT_CONTROL  &none
-&kp HASH    &kp CARET        &kp EQUAL       &kp UNDERSCORE   &kp DOLLAR        &kp ASTERISK                 &kp DOUBLE_QUOTES  &kp PIPE        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp QUESTION      &none
-&kp TILDE   &kp LESS_THAN    &kp PIPE        &kp MINUS        &kp GREATER_THAN  &kp SLASH                    &kp SQT            &kp AMPERSAND   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none             &none
-&trans      &none            &none           &kp AMPERSAND    &kp PLUS                                                          &none           &none                 &none                  &none             &none
-                                                              &kp BACKSLASH     &kp COLON     &kp AT_SIGN    &trans             &trans          &trans
-                                                              &kp PERCENT       &kp COLON     &kp AT_SIGN    &trans             &trans          &trans
+&trans      &trans           &trans          &trans           &trans            &trans                        &trans             &trans          &trans                &trans                 &trans            &trans
+&trans      &trans           &trans          &trans           &trans            &trans                        &trans             &trans          &trans                &trans                 &trans            &trans
+&kp PERIOD  &kp EXCLAMATION  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp SEMICOLON     &kp QUESTION                  &kp GRAVE          &kp LEFT_SHIFT  &kp RIGHT_COMMAND     &kp RIGHT_ALT          &kp LEFT_CONTROL  &none
+&kp HASH    &kp CARET        &kp EQUAL       &kp UNDERSCORE   &kp DOLLAR        &kp ASTERISK                  &kp DOUBLE_QUOTES  &kp PIPE        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp QUESTION      &none
+&kp TILDE   &kp LESS_THAN    &kp PIPE        &kp MINUS        &kp GREATER_THAN  &kp SLASH                     &kp SQT            &kp AMPERSAND   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none             &none
+&trans      &none            &none           &kp AMPERSAND    &kp PLUS                                                           &none           &none                 &none                  &none             &none
+                                                              &kp COLON         &kp BACKSLASH  &kp AT_SIGN    &trans             &trans          &trans
+                                                              &kp PERCENT       &kp COLON      &kp AT_SIGN    &trans             &trans          &trans
             >;
         };
 
@@ -112,7 +112,7 @@
 
 &trackball_peripheral_listener {
     input-processors =
-        //     activate layer 3 within 500ms of the trackball moving,,
+        //     activate layer 3 within 500ms of the trackball moving,,,
         <&zip_temp_layer 3 500>;
 };
 
@@ -120,10 +120,10 @@
 
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,
         <&zip_xy_scaler 1 3>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };

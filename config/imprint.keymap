@@ -62,7 +62,7 @@
 &kp LSHFT   &kp Z           &kp X              &kp C                  &kp D                &kp V                        &kp K  &kp H                 &kp COMMA                            &kp DOT             &kp FSLH        &kp RSHFT
 &mo 4       &kp HOME        &kp LGUI           &kp LEFT               &kp RIGHT                                                &kp DOWN              &kp UP_ARROW                         &none               &none           &none
                                                                       &lt 2 BACKSPACE      &key_repeat  &kp NUMBER_5    &none  &kp ENTER             &lt 1 SPACE
-                                                                      &kp TAB              &kp ESCAPE   &mo 3           &none  &kp TAB               &mt RC(RS(RA(RIGHT_GUI))) RC(SPACE)
+                                                                      &mo 1                &kp ESCAPE   &mo 3           &none  &kp TAB               &mt RC(RS(RA(RIGHT_GUI))) RC(SPACE)
             >;
         };
 
@@ -74,7 +74,7 @@
 &kp HASH    &kp CARET        &kp EQUAL       &kp UNDERSCORE   &kp DOLLAR        &kp ASTERISK                  &kp DOUBLE_QUOTES  &kp PIPE        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp QUESTION      &none
 &kp TILDE   &kp LESS_THAN    &kp PIPE        &kp MINUS        &kp GREATER_THAN  &kp SLASH                     &kp SQT            &kp AMPERSAND   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none             &none
 &trans      &none            &none           &kp AMPERSAND    &kp PLUS                                                           &none           &none                 &none                  &none             &none
-                                                              &kp COLON         &kp BACKSLASH  &kp AT_SIGN    &trans             &trans          &trans
+                                                              &kp SINGLE_QUOTE  &kp BACKSLASH  &kp AT_SIGN    &trans             &trans          &trans
                                                               &kp PERCENT       &kp COLON      &kp AT_SIGN    &trans             &trans          &trans
             >;
         };
@@ -94,14 +94,14 @@
 
         mouse_layer {
             bindings = <
-&trans  &trans  &trans  &trans     &trans       &trans            &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans       &trans            &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans       &trans            &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &none   &mkp LCLK  &mkp RCLK    &trans            &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans       &trans            &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans                                 &trans     &trans     &trans  &trans  &trans
-                                   &key_repeat  &trans  &trans    &trans  &mkp LCLK  &mkp RCLK
-                                   &trans       &trans  &trans    &trans  &trans     &mkp MCLK
+&trans  &trans  &trans  &trans     &trans     &trans            &trans  &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans     &trans            &trans  &trans     &trans     &trans  &trans  &trans
+&none   &none   &none   &none      &none      &none             &trans  &trans     &trans     &trans  &trans  &trans
+&none   &none   &none   &mkp LCLK  &mkp RCLK  &none             &trans  &trans     &trans     &trans  &trans  &trans
+&none   &none   &none   &none      &none      &none             &trans  &trans     &trans     &trans  &trans  &trans
+&none   &none   &none   &trans     &trans                               &trans     &trans     &trans  &trans  &trans
+                                   &trans     &trans  &trans    &trans  &mkp LCLK  &mkp RCLK
+                                   &trans     &trans  &trans    &trans  &trans     &mkp MCLK
             >;
         };
 
@@ -124,7 +124,7 @@
 
 &trackball_peripheral_listener {
     input-processors =
-        //     activate layer 3 within 500ms of the trackball moving,,,,,,,
+        //     activate layer 3 within 500ms of the trackball moving,,,,,,,,
         <&zip_temp_layer 3 500>;
 };
 
@@ -132,10 +132,10 @@
 
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 2 3>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
